@@ -8,9 +8,12 @@ services:
     volumes:
       - E:\Docker\Plex:C:\Plex
     security_opt: 
-      - "credentialspec=file://Plex.json" # Network identity
+      # AD Managed Service identity so I get read media off the network share
+      - "credentialspec=file://Plex.json" 
+      # I also use a DHCP reservation
     mac_address: d0:c8:32:12:33:33
     hostname: plex
+    #One day there might be some benefit through GPU DxA 
     devices: 
         - class/5B45201D-F2F2-4F3B-85BB-30FF1F953599
 networks:
