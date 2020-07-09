@@ -1,0 +1,19 @@
+version: '3.5'
+services:
+  plex:
+    isolation: process
+    container_name: plex
+    image: cspeers/plex-windows:latest
+    restart: unless-stopped
+    volumes:
+      - E:\Docker\Plex:C:\Plex
+    security_opt: 
+      - "credentialspec=file://Plex.json" # Network identity
+    mac_address: d0:c8:32:12:33:33
+    hostname: plex
+    devices: 
+        - class/5B45201D-F2F2-4F3B-85BB-30FF1F953599
+networks:
+    default:
+      external: 
+          name: External
