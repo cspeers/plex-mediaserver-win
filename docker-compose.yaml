@@ -3,7 +3,7 @@ services:
   plex:
     isolation: process
     container_name: plex
-    image: cspeers/plex-windows:latest
+    image: cspeers/plex-server-windows:latest
     restart: unless-stopped
     volumes:
       - E:\Docker\Plex:C:\Plex
