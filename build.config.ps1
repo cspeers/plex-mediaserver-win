@@ -1,5 +1,5 @@
 $env:DOCKER_REPO = "cspeers"
-$env:DOCKER_IMAGE = "plex-windows"
+$env:DOCKER_IMAGE = "plex-server-windows"
 $env:DOCKER_IMAGE_TAG='1809'
 $env:DOCKER_BASE_IMAGE = "mcr.microsoft.com/windows:$env:DOCKER_IMAGE_TAG"
 
