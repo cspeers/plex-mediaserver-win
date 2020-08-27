@@ -6,7 +6,7 @@ services:
     image: cspeers/plex-server-windows:latest
     restart: unless-stopped
     volumes:
-      - E:\Docker\Plex:C:\Plex
+      - E:\docker\plex:C:\Plex
     security_opt: 
       # AD Managed Service identity so I get read media off the network share
       - "credentialspec=file://Plex.json" 
