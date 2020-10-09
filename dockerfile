@@ -38,3 +38,6 @@ EXPOSE 32400/tcp
 # Define the entrypoint
 #CMD Start-Process -FilePath 'C:\Program Files (x86)\Plex\Plex Media Server\Plex Media Server.exe' -NoNewWindow -Wait
 CMD C:\PlexSetup\Start-Plex.ps1
+
+
+HEALTHCHECK --interval=30s --timeout=30s --start-period=30s --retries=3 CMD powershell -Command {Test-NetConnection $env:COMPUTERNAME -Port 32400}
