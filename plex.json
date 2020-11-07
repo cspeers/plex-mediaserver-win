@@ -1,0 +1,25 @@
+{
+    "CmsPlugins": [
+        "ActiveDirectory"
+    ],
+    "DomainJoinConfig": {
+        "Sid": "S-1-5-21-1186169288-267930994-1472559447",
+        "MachineAccountName": "Plex",
+        "Guid": "ebcbab27-ffd0-4f60-9f7a-80886a4a7ef6",
+        "DnsTreeName": "secretweapon.co",
+        "DnsName": "secretweapon.co",
+        "NetBiosName": "SDUB"
+    },
+    "ActiveDirectoryConfig": {
+        "GroupManagedServiceAccounts": [
+            {
+                "Name": "Plex",
+                "Scope": "secretweapon.co"
+            },
+            {
+                "Name": "Plex",
+                "Scope": "SDUB"
+            }
+        ]
+    }
+}
