@@ -1,4 +1,4 @@
-ARG BASE_IMAGE=mcr.microsoft.com/windows:1809
+ARG BASE_IMAGE=mcr.microsoft.com/windows/server:10.0.20348.707
 FROM ${BASE_IMAGE}
 
 ARG IMPORT_PREFS=YES

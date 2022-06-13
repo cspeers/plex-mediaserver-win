@@ -8,7 +8,7 @@ $ErrorActionPreference = "Stop"
 . $(Join-Path $PSScriptRoot ".\build.config.ps1")
 
 Write-Host $env:DOCKER_APPLICATION_VERSION
-$IMAGEVERSION="win1809-$($env:DOCKER_APPLICATION_VERSION)"
+$IMAGEVERSION="$($Env:DOCKER_IMAGE_TAG)-$($env:DOCKER_APPLICATION_VERSION)"
 
 $imageFullName = ("{0}/{1}:{2}" -f $env:DOCKER_REPO, $env:DOCKER_IMAGE, $IMAGEVERSION)
 $imageLatestName = ("{0}/{1}:latest" -f $env:DOCKER_REPO, $env:DOCKER_IMAGE)

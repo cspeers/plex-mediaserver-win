@@ -1,6 +1,6 @@
 $env:DOCKER_REPO = "cspeers"
 $env:DOCKER_IMAGE = "plex-server-windows"
-$env:DOCKER_IMAGE_TAG='1809'
+$env:DOCKER_IMAGE_TAG='10.0.17763.2928-amd64'
 $env:DOCKER_BASE_IMAGE = "mcr.microsoft.com/windows:$env:DOCKER_IMAGE_TAG"
 
 $PLEX_UPDATE_FEED='https://plex.tv/api/downloads/5.json?channel=plexpass'
