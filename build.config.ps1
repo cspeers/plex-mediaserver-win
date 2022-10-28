@@ -6,7 +6,7 @@ $env:DOCKER_BASE_IMAGE = "mcr.microsoft.com/windows:$env:DOCKER_IMAGE_TAG"
 $PLEX_UPDATE_FEED='https://plex.tv/api/downloads/5.json?channel=plexpass'
 $Downloads=Invoke-RestMethod -UseBasicParsing -uri $PLEX_UPDATE_FEED
 $WindowsDownload=$Downloads.computer.Windows
-$ReleaseInfo=$WindowsDownload.releases
+$ReleaseInfo=$WindowsDownload.releases|Where-Object label -eq 'Windows 32-bit'
 Write-Host "The current version of Plex Media Server is $($WindowsDownload.version)"
 Write-Host "What's New: `n$($WindowsDownload.items_added)"
 Write-Host "What's Fixed: `n$($WindowsDownload.items_fixed)"

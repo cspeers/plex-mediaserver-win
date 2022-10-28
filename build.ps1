@@ -20,9 +20,11 @@ Write-Host "Building $imageFullName"
 $dockerArgs=@('build',
 '--build-arg',"BASE_IMAGE=$BASE_IMAGE",
 '--build-arg',"PLEX_INSTALLER=$PLEX_URI",
-'--build-arg', "APP_VERSION=$env:DOCKER_APPLICATION_VERSION",
-'.','-t',$imageFullName
+'--build-arg',"APP_VERSION=$env:DOCKER_APPLICATION_VERSION",
+'--tag',$imageFullName,
+'.'
 )
+Write-Host "Command Line:docker.exe $([String]::Join(' ',$dockerArgs))"
 Start-Process -FilePath 'docker.exe' -ArgumentList $dockerArgs -NoNewWindow -Wait
 if($TagLatest) {
     Write-Host "Tagging image $imageFullName as latest"

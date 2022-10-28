@@ -19,6 +19,7 @@ WORKDIR C:/PlexSetup
 ADD ${PLEX_INSTALLER_URI} Setup.exe
 
 # Install Plex
+#RUN Start-Process -FilePath Setup.exe -ArgumentList "/VERYSILENT","/NORESTART","/SUPPRESSMSGBOXES" -NoNewWindow -Wait
 RUN Start-Process -FilePath Setup.exe -ArgumentList /quiet -NoNewWindow -Wait
 RUN New-ItemProperty -Path 'HKCU:\Software\Plex, Inc.\Plex Media Server' -Name 'LocalAppDataPath' -Value 'C:\Plex' -Force
 
